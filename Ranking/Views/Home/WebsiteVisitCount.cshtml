@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "WebsiteVisitCount";
+}
+
+
+<head>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/Ranking.js"></script>
+    <link href="~/Style.css" rel="stylesheet" />
+</head>
+
+
+
+<h2>WebsiteVisitCount</h2>
+
+
+
+
+<body ng-app="rankModule">
+
+
+    <div ng-controller="logController">
+      
+            Choosen site:    <select ng-model="selectedSite" ng-change="getLogs()" ng-options="site for site in AvailableSites"></select>
+
+            <p>&nbsp;</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Day</th>
+                    <th>TotalVisit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="log in allLogs">
+                    <th>{{log.ReportedDate | date:"dd-MM-yyyy"}}</th>
+                    <th>{{log.ReportedDate | date:"EEEE"}}</th>
+                    <th>{{log.TotalVisit}}</th>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+</body>
+

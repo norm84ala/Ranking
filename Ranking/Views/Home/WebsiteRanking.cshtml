@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Top 5 Most Visited Site";
+}
+
+<head>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/Ranking.js"></script>
+    <link href="~/Style.css" rel="stylesheet" />
+</head>
+
+
+<h2>WebsiteRanking</h2>
+
+<body ng-app="rankModule">
+
+
+    <div ng-controller="topfiveController">
+
+        Report date :    <select ng-model="selectedDate" ng-change="getReport()" ng-options="dat for dat in AvailableReportDate"></select>
+        <p>&nbsp;</p>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>website</th>
+                    <th>TotalVisit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="WebHit in WebHits">
+                    <th>{{$index + 1}}</th>
+                    <th>{{WebHit.website}}</th>
+                    <th>{{WebHit.TotalVisit}}</th>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+</body>

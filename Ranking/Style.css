@@ -1,0 +1,23 @@
+﻿table {
+    border-collapse: collapse;
+    font-family: Arial;
+    padding  : 5px;
+    padding-top: 10px;
+   
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+
+th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+}
+
+.space {
+padding :10px;
+}
